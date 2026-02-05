@@ -1,27 +1,37 @@
 :root {
-  --background-color: #f4f4f4;
-  --text-color: #333;
-  --container-bg: #fff;
-  --header-color: #0056b3;
-  --button-bg: #007bff;
-  --button-hover-bg: #0056b3;
-  --result-section-border: #eee;
-  --result-header-color: #28a745;
-  --input-border-color: #ccc;
-  --color-box-border: #ccc;
+  /* Earth Palette from ColorHunt */
+  --ch-earth-dark-blue-gray: #525E75;
+  --ch-earth-desaturated-cyan: #789395;
+  --ch-earth-light-blue-gray: #9EB2CD;
+  --ch-earth-light-green: #B4CFB0;
+  --ch-earth-off-white: #EEEEEE;
+  --ch-earth-dark-text: #333333;
+
+  /* Mapped UI Colors - Light Mode */
+  --background-color: var(--ch-earth-off-white);
+  --text-color: var(--ch-earth-dark-text);
+  --container-bg: var(--ch-earth-light-blue-gray);
+  --header-color: var(--ch-earth-dark-blue-gray);
+  --button-bg: var(--ch-earth-desaturated-cyan);
+  --button-hover-bg: var(--ch-earth-dark-blue-gray);
+  --result-section-border: var(--ch-earth-desaturated-cyan);
+  --result-header-color: var(--ch-earth-dark-blue-gray);
+  --input-border-color: var(--ch-earth-desaturated-cyan);
+  --color-box-border: var(--ch-earth-desaturated-cyan);
 }
 
 body.dark-mode {
-  --background-color: #333;
-  --text-color: #f4f4f4;
-  --container-bg: #555;
-  --header-color: #a3daff;
-  --button-bg: #6c757d;
-  --button-hover-bg: #5a6268;
-  --result-section-border: #777;
-  --result-header-color: #88cc88;
-  --input-border-color: #888;
-  --color-box-border: #888;
+  /* Mapped UI Colors - Dark Mode (complementary) */
+  --background-color: var(--ch-earth-dark-blue-gray);
+  --text-color: var(--ch-earth-off-white);
+  --container-bg: var(--ch-earth-desaturated-cyan);
+  --header-color: var(--ch-earth-off-white);
+  --button-bg: var(--ch-earth-light-blue-gray);
+  --button-hover-bg: var(--ch-earth-light-green);
+  --result-section-border: var(--ch-earth-off-white);
+  --result-header-color: var(--ch-earth-light-green);
+  --input-border-color: var(--ch-earth-off-white);
+  --color-box-border: var(--ch-earth-off-white);
 }
 
 body {
