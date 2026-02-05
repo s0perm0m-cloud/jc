@@ -1,3 +1,29 @@
+:root {
+  --background-color: #f4f4f4;
+  --text-color: #333;
+  --container-bg: #fff;
+  --header-color: #0056b3;
+  --button-bg: #007bff;
+  --button-hover-bg: #0056b3;
+  --result-section-border: #eee;
+  --result-header-color: #28a745;
+  --input-border-color: #ccc;
+  --color-box-border: #ccc;
+}
+
+body.dark-mode {
+  --background-color: #333;
+  --text-color: #f4f4f4;
+  --container-bg: #555;
+  --header-color: #a3daff;
+  --button-bg: #6c757d;
+  --button-hover-bg: #5a6268;
+  --result-section-border: #777;
+  --result-header-color: #88cc88;
+  --input-border-color: #888;
+  --color-box-border: #888;
+}
+
 body {
   font-family: Arial, sans-serif;
   display: flex;
@@ -5,12 +31,12 @@ body {
   align-items: center;
   min-height: 100vh;
   margin: 0;
-  background-color: #f4f4f4;
-  color: #333;
+  background-color: var(--background-color);
+  color: var(--text-color);
 }
 
 .container {
-  background-color: #fff;
+  background-color: var(--container-bg);
   padding: 30px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -20,7 +46,7 @@ body {
 }
 
 h1 {
-  color: #0056b3;
+  color: var(--header-color);
   margin-bottom: 20px;
 }
 
@@ -32,15 +58,17 @@ h1 {
 
 .input-section select {
   padding: 10px;
-  border: 1px solid #ccc;
+  border: 1px solid var(--input-border-color);
   border-radius: 5px;
   margin-right: 10px;
   font-size: 1em;
+  background-color: var(--container-bg); /* Use container-bg for select background */
+  color: var(--text-color); /* Use text-color for select text */
 }
 
 .input-section button {
   padding: 10px 20px;
-  background-color: #007bff;
+  background-color: var(--button-bg);
   color: white;
   border: none;
   border-radius: 5px;
@@ -50,17 +78,21 @@ h1 {
 }
 
 .input-section button:hover {
-  background-color: #0056b3;
+  background-color: var(--button-hover-bg);
+}
+
+#mode-toggle {
+    margin-bottom: 20px;
 }
 
 .result-section {
   margin-top: 30px;
-  border-top: 1px solid #eee;
+  border-top: 1px solid var(--result-section-border);
   padding-top: 20px;
 }
 
 .result-section h2 {
-  color: #28a745;
+  color: var(--result-header-color);
   margin-bottom: 15px;
 }
 
@@ -72,14 +104,14 @@ h1 {
 #auspicious-number,
 #auspicious-color {
   font-weight: bold;
-  color: #333;
+  color: var(--text-color);
 }
 
 #color-box {
   margin: 10px auto;
-  border: 1px solid #ccc;
+  border: 1px solid var(--color-box-border);
   width: 50px;
   height: 25px;
   border-radius: 5px;
-  background-color: #ccc; /* Default background */
+  background-color: var(--color-box-border); /* Default background */
 }

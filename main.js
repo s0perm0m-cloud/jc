@@ -4,6 +4,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const auspiciousNumberSpan = document.getElementById('auspicious-number');
   const auspiciousColorSpan = document.getElementById('auspicious-color');
   const colorBox = document.getElementById('color-box');
+  const modeToggleBtn = document.getElementById('mode-toggle');
+  const body = document.body;
 
   const horoscopeData = {
     aries: { number: 9, color: 'Red' },
@@ -20,6 +22,30 @@ document.addEventListener('DOMContentLoaded', () => {
     pisces: { number: 7, color: 'Sea Green' },
   };
 
+  // --- Day/Night Mode Logic ---
+  const setMode = (isDarkMode) => {
+    if (isDarkMode) {
+      body.classList.add('dark-mode');
+      modeToggleBtn.textContent = 'Toggle Day Mode';
+    } else {
+      body.classList.remove('dark-mode');
+      modeToggleBtn.textContent = 'Toggle Night Mode';
+    }
+  };
+
+  // Load mode preference from localStorage
+  const savedMode = localStorage.getItem('darkMode');
+  const isDarkMode = savedMode === 'true'; // Convert string to boolean
+  setMode(isDarkMode);
+
+  modeToggleBtn.addEventListener('click', () => {
+    const currentMode = body.classList.contains('dark-mode');
+    setMode(!currentMode);
+    localStorage.setItem('darkMode', !currentMode);
+  });
+  // --- End Day/Night Mode Logic ---
+
+
   generateBtn.addEventListener('click', () => {
     const selectedHoroscope = horoscopeSelect.value;
     const data = horoscopeData[selectedHoroscope];
@@ -31,7 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
       auspiciousNumberSpan.textContent = '--';
       auspiciousColorSpan.textContent = '--';
-      colorBox.style.backgroundColor = '#ccc';
+      colorBox.style.backgroundColor = 'var(--color-box-border)'; // Use CSS variable for default
     }
   });
 });
