@@ -7,8 +7,35 @@
   <link href='/style.css' rel='stylesheet'>
 </head>
 <body>
-  <h1>Hello, world!</h1>
-  <button onclick="console.log('hello');">Press me</button>
+  <div class="container">
+    <h1>Auspicious Number & Color Generator</h1>
+
+    <div class="input-section">
+      <label for="horoscope-select">Select your Zodiac Sign:</label>
+      <select id="horoscope-select">
+        <option value="aries">Aries</option>
+        <option value="taurus">Taurus</option>
+        <option value="gemini">Gemini</option>
+        <option value="cancer">Cancer</option>
+        <option value="leo">Leo</option>
+        <option value="virgo">Virgo</option>
+        <option value="libra">Libra</option>
+        <option value="scorpio">Scorpio</option>
+        <option value="sagittarius">Sagittarius</option>
+        <option value="capricorn">Capricorn</option>
+        <option value="aquarius">Aquarius</option>
+        <option value="pisces">Pisces</option>
+      </select>
+      <button id="generate-btn">Generate</button>
+    </div>
+
+    <div class="result-section">
+      <h2>Your Auspicious Details:</h2>
+      <p>Auspicious Number: <span id="auspicious-number">--</span></p>
+      <p>Auspicious Color: <span id="auspicious-color">--</span></p>
+      <div id="color-box" style="width: 50px; height: 20px; border: 1px solid #ccc;"></div>
+    </div>
+  </div>
   <script defer type="text/javascript" src="/main.js"></script>
 </body>
 </html>
