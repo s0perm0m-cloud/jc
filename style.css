@@ -133,7 +133,7 @@ h1 {
 
 /* Feedback Form Styles */
 .feedback-section {
-    margin-top: 20px;
+    margin-top: 50px; /* Added to move the form further down */
     padding: 20px;
     background-color: var(--container-bg);
     border-radius: 10px;
