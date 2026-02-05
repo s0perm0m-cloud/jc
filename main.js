@@ -6,6 +6,23 @@ document.addEventListener('DOMContentLoaded', () => {
   const colorBox = document.getElementById('color-box');
   const modeToggleBtn = document.getElementById('mode-toggle');
   const body = document.body;
+  const quoteOfTheDayElement = document.getElementById('quote-of-the-day');
+
+  const encouragingQuotes = [
+    "The best way to predict the future is to create it.",
+    "Believe you can and you're halfway there.",
+    "The only way to do great work is to love what you do.",
+    "Success is not final, failure is not fatal: it is the courage to continue that counts.",
+    "The future belongs to those who believe in the beauty of their dreams."
+  ];
+
+  const displayRandomQuote = () => {
+    const randomIndex = Math.floor(Math.random() * encouragingQuotes.length);
+    quoteOfTheDayElement.textContent = encouragingQuotes[randomIndex];
+  };
+
+  // Display initial quote
+  displayRandomQuote();
 
   const horoscopeData = {
     aries: { number: 9, color: 'Red' },
@@ -59,5 +76,6 @@ document.addEventListener('DOMContentLoaded', () => {
       auspiciousColorSpan.textContent = '--';
       colorBox.style.backgroundColor = 'var(--color-box-border)'; // Use CSS variable for default
     }
+    displayRandomQuote(); // Display a new quote after each generation
   });
 });
